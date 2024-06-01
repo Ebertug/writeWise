@@ -1,5 +1,5 @@
 import React ,{ useState } from 'react';
-import { View,Text,StyleSheet } from 'react-native';
+import { View,Text,StyleSheet,TextInput } from 'react-native';
 
 
 const buttonColor='#FFD700'
@@ -9,9 +9,9 @@ const transparentColor='#6C7A89'
 
 const CustomizeScreen = ({ navigation }) => {
 
-    var [name, setEmail] = useState('');
-    var [age, setPassword] = useState('');
-    var [Nation, setPassword] = useState('');
+    var [name, setName] = useState('');
+    var [age, setAge] = useState('');
+    var [nation, setPassword] = useState('');
     var [Job, setPassword] = useState('');
     var [hobies, setPassword] = useState('');
 
@@ -20,7 +20,15 @@ const CustomizeScreen = ({ navigation }) => {
     };
     return (
         <View style={styles.container}>
-            <Text>This is Customize Page!</Text>
+            <View style={styles.inputContainer}>
+                <TextInput
+                placeholder='something@gmail.com'
+                placeholderTextColor={placeholderColor}
+                style={styles.input}
+                onChangeText={setName}
+                value={name}
+                />
+            </View>
         </View>
     );
 };
@@ -30,6 +38,25 @@ const styles = StyleSheet.create({
         backgroundColor:backgroundColor,
         flex:1,
         alignItems:'center',
+    },
+    inputContainer:{
+        marginTop:192,
+        backgroundColor:backgroundColor,
+        color:textColor,
+        alignItems:'center',
+    },
+    input:{
+        borderColor:transparentColor,
+        backgroundColor:buttonColor,
+        color:textColor,
+        paddingVertical:8,
+        paddingHorizontal:16,
+        width:256,
+        height:40,
+
+        borderWidth:2,
+        borderRadius:32,
+        fontSize:16,
     },
 });
 
