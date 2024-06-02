@@ -1,16 +1,14 @@
-import React from 'react';
-import { View,Text,StyleSheet,Image,Platform, TouchableOpacity} from 'react-native';
-
-
+import React, { useState } from 'react';
+import { View, StyleSheet, Text, } from 'react-native';
 const buttonColor='#FFD700'
 const backgroundColor='#BDC3C7'
 const textColor='#000'
 const transparentColor='#6C7A89'
-
-const ProfileScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
     const handleCustomize = () => {
         navigation.navigate('Customize');
     };
+
     return (
         <View style={styles.container}>
             <Image alt='Your Profile Picture'source={require('../assets/profilePicture.png')} style={styles.profilePicture} />
@@ -80,4 +78,4 @@ const styles = StyleSheet.create({
     
 });
 
-export default ProfileScreen;
+export default HomeScreen;

@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'; // Sayfa Geçiş
 import LoginScreen from './screens/loginScreen'; // Kullanılacak Sayfaların isimleri ve pathleri
 import ProfileScreen from './screens/profileScreen'; // Kullanılacak Sayfaların isimleri ve pathleri
 import CustomizeScreen from './screens/customizeScreen'; // Kullanılacak Sayfaların isimleri ve pathleri
+import HomeScreen from './screens/homeScreen' // Kullanılacak Sayfaların isimleri ve pathleri
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ const App = () => {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Customize" component={CustomizeScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

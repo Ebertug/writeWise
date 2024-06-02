@@ -44,13 +44,13 @@ const LoginScreen = ({ navigation }) => {
         </View>
         <View style={styles.buttonContainer}>
             <TouchableOpacity title="Sign In" onPress={handleProfile} style={styles.button}> 
-                <Text style={styles.buttonText}> Sign In</Text> 
+                <Text style={styles.buttonText}>Sign In</Text> 
             </TouchableOpacity>
             <TouchableOpacity title="Sign Up" onPress={handleProfile} style={styles.button}> 
-                <Text style={styles.buttonText}> Sign Up</Text>
+                <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
-            <TouchableOpacity title="Google" onPress={handleProfile} style={{marginTop:8,width:40,height:40}} >
-                <Image source={require('../assets/google2.png')} style={{height:40,width:40,resizeMode: 'contain'}}  />
+            <TouchableOpacity title="Google" onPress={handleProfile} style={styles.googleButton} >
+                <Image source={require('../assets/google2.png')} style={styles.google}  />
             </TouchableOpacity>
         </View>
     </View>
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:backgroundColor,
         flex:1,
+        alignItems:'center',
     },
     logoContainer:{
         alignSelf:'center',
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
         borderColor:transparentColor,
         backgroundColor:buttonColor,
 
-        paddingVertical:8,
+        paddingVertical:6,
         paddingHorizontal:16,
         marginVertical:8,
         marginRight:4,
@@ -113,12 +114,26 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         color:textColor,
         fontSize:16,
+        fontWeight:'bold',
     },
     text:{
         alignSelf:'flex-start',
-        marginLeft: Platform.OS === 'web' ? 830 : 64,
         color:textColor,
         fontSize:16,
+        fontWeight:'bold',
+    },
+    googleButton:{
+        marginTop:8,
+        width:40,
+        height:40,
+    },
+    google:{
+        height:40,
+        width:40,
+        resizeMode: 'contain',
+        borderColor:transparentColor,
+        borderWidth:2,
+        borderRadius:32,
     }
 });
 
