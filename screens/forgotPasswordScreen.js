@@ -7,16 +7,13 @@ const textColor='#000'
 const transparentColor='#6C7A89'
 const placeholderColor='#636363'
 
-const LoginScreen = ({ navigation }) => {
+const ForgotScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    
+    const handleLogin = () => {
+        navigation.navigate('Login');
+    };
 
-    const handleHome = () => {
-        navigation.navigate('Profile');
-    };
-    const handleForgot = () => {
-        navigation.navigate('Forgot');
-    };
     return (
     <View style={styles.container}>
         <View style={styles.logoContainer}>
@@ -30,35 +27,13 @@ const LoginScreen = ({ navigation }) => {
             style={styles.input}
             onChangeText={setEmail}
             value={email}
-            />
-            <Text style={styles.text}>Password</Text>
-            <TextInput
-            placeholder='*******d'
-            placeholderTextColor={placeholderColor}
-            style={styles.input}
-            onChangeText={setPassword}
-            value={password}
-            secureTextEntry
-            />
-            
+            />            
         </View>
         <View style={styles.buttonContainer}>
-            
-            <TouchableOpacity title="Sign In" onPress={handleHome} style={styles.button}> 
-                <Text style={styles.buttonText}>Sign In</Text> 
-            </TouchableOpacity>
-            <TouchableOpacity title="Sign Up" onPress={handleHome} style={styles.button}> 
-                <Text style={styles.buttonText}>Sign Up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity title="Google" onPress={handleHome} style={styles.googleButton} >
-                <Image source={require('../assets/google2.png')} style={styles.google}  />
+            <TouchableOpacity title="Send Email" onPress={handleLogin} style={styles.button}> 
+                <Text style={styles.buttonText}>Send Email</Text> 
             </TouchableOpacity>
         </View>
-        <Button
-                title="Forgot Password?"
-                style={styles.button}
-                onPress={handleForgot}
-            />
     </View>
     );
 };
@@ -78,10 +53,12 @@ const styles = StyleSheet.create({
         height:64,
     },
     inputContainer:{
-        marginTop:192,
+        marginTop:256,
         backgroundColor:backgroundColor,
         color:textColor,
         alignItems:'center',
+
+        
     },
     input:{
         borderColor:transparentColor,
@@ -109,7 +86,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:16,
         marginVertical:8,
         marginRight:4,
-        width:102,
+        width:128,
         height:40,
         justifyContent:'center',
         borderWidth:2,
@@ -117,7 +94,8 @@ const styles = StyleSheet.create({
         color:textColor,
     },
     buttonText:{
-        alignSelf:'center',
+        textAlign:'center',
+        
         color:textColor,
         fontSize:16,
         fontWeight:'bold',
@@ -148,4 +126,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LoginScreen;
+export default ForgotScreen;

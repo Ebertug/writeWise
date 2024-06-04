@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet,Image,Platform, TouchableOpacity} from 'react-native';
+import { View,Text,StyleSheet,Image, Button,} from 'react-native';
 
 
 const buttonColor='#FFD700'
@@ -12,10 +12,14 @@ const ProfileScreen = ({ navigation }) => {
         navigation.navigate('Customize');
     };
     return (
+        
         <View style={styles.container}>
             <Image alt='Your Profile Picture'source={require('../assets/profilePicture.png')} style={styles.profilePicture} />
-            <TouchableOpacity title="CustomizeProfile" onPress={handleCustomize}> <Text style={styles.customizeProfile}>Customize Profile</Text> </TouchableOpacity>
-            <View style={styles.container}>
+            <Button
+                title="Customize Profile"
+                onPress={handleCustomize}
+            />
+            <View style={styles.profileContainer}>
 
                 <Text style={styles.label}>Name</Text>
                 <Text style={styles.textBackground}>Eyüp Yenikomşu</Text>
@@ -30,7 +34,7 @@ const ProfileScreen = ({ navigation }) => {
                 <Text style={styles.textBackground}>Turkey</Text>
 
                 <Text style={styles.label}>Job</Text>
-                <Text style={styles.textBackground}>Software Engineer</Text>
+                <Text style={styles.textBackground} >Software Engineer</Text>
 
                 <Text style={styles.label}>Hobies</Text>
                 <Text style={styles.textBackground}>Basketball, Music, Movie</Text>
@@ -47,6 +51,11 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:'center',
     },
+    profileContainer:{
+        backgroundColor:backgroundColor,
+        color:textColor,
+        alignItems:'center',
+    },
     profilePicture:{
         marginTop:64,
         height:250,
@@ -56,17 +65,19 @@ const styles = StyleSheet.create({
         borderRadius:150,
     },
     textBackground:{
-        borderColor:transparentColor,
-        backgroundColor:buttonColor,
-        color:textColor,
+
         paddingVertical:8,
         paddingHorizontal:16,
         width:256,
         height:40,
-
+            
         borderWidth:2,
-        borderRadius:32,
+        borderRadius:20,
         fontSize:16,
+
+        borderColor:transparentColor,
+        backgroundColor:buttonColor,
+        overflow:"hidden" // taşan kısımları ignoreluyor
     },
     label:{
         fontWeight:'bold',
@@ -77,7 +88,7 @@ const styles = StyleSheet.create({
         color:'#0049ff',
         fontSize:16,  
     },
-    
+
 });
 
 export default ProfileScreen;

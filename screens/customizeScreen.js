@@ -18,12 +18,14 @@ const CustomizeScreen = ({ navigation }) => {
     const [hobies, setHobies] = useState('');
 
     const handleProfile = () => {
-        
+        navigation.navigate('Profile');
     };
     return (
+    
         <View style={styles.container}>
             <View style={styles.inputContainer}>
                 <Image alt='Your Profile Picture'source={require('../assets/profilePicture.png')} style={styles.profilePicture} />
+                
                 <Text style={styles.label}>Name</Text>
                 <TextInput
                     style={styles.input}
@@ -76,7 +78,7 @@ const CustomizeScreen = ({ navigation }) => {
                 <TouchableOpacity title="Save to Firebase" onPress={handleProfile} style={styles.button}> 
                     <Text style={styles.buttonText}>Save</Text> 
                 </TouchableOpacity>
-
+                
             </View>
         </View>
     );
@@ -125,11 +127,11 @@ const styles = StyleSheet.create({
         borderColor:transparentColor,
         backgroundColor:buttonColor,
 
-        paddingVertical:8,
-        paddingHorizontal:16,
+        justifyContent:'center',
+
         marginVertical:8,
         marginRight:4,
-        width:256,
+        width:96,
         height:40,
 
         borderWidth:2,
@@ -137,7 +139,7 @@ const styles = StyleSheet.create({
         color:textColor,
     },
     buttonText:{
-        alignSelf:'center',
+        textAlign:'center',
         color:textColor,
         fontSize:16,
         fontWeight:'bold',
