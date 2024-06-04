@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Forgot" screenOptions={{headerShown: false}} /* Başlangıç ekranını seçtik, üst kısımda sayfa adını gösteren yazıyı kaldırdık*/>  
+      <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} /* Başlangıç ekranını seçtik, üst kısımda sayfa adını gösteren yazıyı kaldırdık*/>  
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Customize" component={CustomizeScreen} />
